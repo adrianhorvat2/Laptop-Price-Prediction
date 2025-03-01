@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-USERS_FILE = "app/users.csv"
+USERS_FILE = "users.csv"
 
 def load_users():
     if os.path.exists(USERS_FILE):

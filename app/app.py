@@ -39,7 +39,7 @@ with col2:
 
 API_URL = "https://laptop-price-prediction-1-fovm.onrender.com/predict"
 
-SUBMISSIONS_FILE = "app/submissions.csv"
+SUBMISSIONS_FILE = "submissions.csv"
 
 st.title("Laptop Price Predictor")
 st.markdown(f"""
@@ -47,8 +47,11 @@ Welcome **{st.session_state.username}**!
 
 This app predicts the price of a laptop based on your input specifications.
 It also saves your submission and displays sidebar graphs based on all users submissions:
-- **Average Price by Brand** (each brand in a different color)
+#### 📊 **Insights from the Dataset:** 
+- **Average Price by Brand** 
 - **Price vs. RAM**
+
+#### 📝 **Insights from User Input:**  
 - **5 Most Popular CPUs**
 - **Operating System Distribution**
 - **Battery life based on screen size**
@@ -60,7 +63,7 @@ The machine learning model is deployed on Render.
 @st.cache_data
 def load_data():
     try:
-        data = pd.read_csv("laptop_dataset.csv")
+        data = pd.read_csv("../laptop_dataset.csv")
     except Exception as e:
         st.error(f"Error loading CSV file: {e}")
         return pd.DataFrame()
@@ -284,7 +287,7 @@ if st.button("Submit"):
     }
 
     try:
-        with st.spinner("Submitting your specs and predicting the price..."):
+        with st.spinner("Submitting your specs and predicting the price... This may take a while if the server is inactive."):
             response = requests.post(API_URL, json=payload, headers=headers)
             time.sleep(1)  # Simulate a short delay for spinner effect
     except Exception as e:
