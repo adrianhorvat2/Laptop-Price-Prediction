@@ -53,7 +53,7 @@ It also saves your submission and displays sidebar graphs based on all users sub
 - **Operating System Distribution**
 - **Battery life based on screen size**
 
-The machine learning model is deployed on Azure Machine Learning.
+The machine learning model is deployed on Render.
 """)
 
 
