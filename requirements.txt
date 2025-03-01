@@ -96,7 +96,6 @@ pyparsing==3.1.2
 pyserial==3.5
 python-dateutil==2.9.0.post0
 pytz==2024.1
-pywin32==306
 PyYAML==6.0.2
 pyzmq==25.1.2
 reedsolo==1.7.0
